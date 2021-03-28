@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+XD
+{% endif %}
+<form action="{% url 'register' %}" method="POST">
+    {% csrf_token %}
+    <input name = "username" type="text">
+    <input name = "email"  type="text">
+    <input name = "password"  type="text">
+    <input type="submit" value="Submit">
+
+</form>
+{% endblock %}
